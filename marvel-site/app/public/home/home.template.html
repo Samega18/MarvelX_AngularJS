@@ -11,8 +11,8 @@
           <input class="searchInput"
             ng-model="ctrl.searchName"
             type="text"
-            placeholder="Search character...">
-          <button class="btn btn-primary"
+            placeholder="Pesquisar..">
+          <button class="searchButton"
             ng-click="ctrl.search()"
             type="button">
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -22,29 +22,44 @@
         </div>
     </form>
 
-    <div class="row CardsContainer">
+    <div ng-if="ctrl.errorView==true"
+    style="display: flex;align-items: center;justify-content: center;width: 100%;">
+      <div class="alert alert-danger" role="alert" style="width: 80%;">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        Sua pesquisa não foi encontrada
+      </div>
+    </div>
 
-      
-        <span ng-if="categorie=='characters'">
+    <div class="row CardsContainer" ng-if="ctrl.errorView==false">
+        
+        <span ng-if="ctrl.isLoading">
+          <loading></loading>
+        </span>
+
+        <span ng-if="categorie=='characters' && ctrl.isLoading==false">
           <div class="col-sx-12 col-sm-4 col-md-2"
           ng-repeat="character in ctrl.characters">
             <card-character character="character" see-details="ctrl.seeDetails(character)"
             ></card-character>
           </div>
-          <div class="col-md-12"
-            ng-if="ctrl.characters.length <= ctrl.totalItems">
-            <button class="btn btn-primary"
-              ng-click="ctrl.seeMore()">
-              Ver mais
-            </button>
-          </div>
         </span>
         
-        <span ng-if="categorie=='events' || categorie=='series' || categorie=='comics'">
+        <span ng-if="categorie=='events' || categorie=='series' || categorie=='comics' && ctrl.isLoading==false">
           <div class="col-sx-12 col-sm-5 col-md-3"
           ng-repeat="character in ctrl.characters">
             <card-others character="character" categorie-local="categorie"
             see-details="ctrl.seeDetails(character)"></card-others>
+          </div>
+        </span>
+
+        <span ng-if="ctrl.isLoading==false && ctrl.errorView==false">
+          <div class="col-md-12"
+          ng-if="ctrl.characters.length <= ctrl.totalItems">
+            <button class="btn btn-primary"
+              ng-click="ctrl.seeMore()">
+              Ver mais
+            </button>
           </div>
         </span>
 

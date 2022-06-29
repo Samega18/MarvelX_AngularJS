@@ -28,16 +28,28 @@ body {
 
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 50%;
   height: auto;
+  border-bottom: 2px solid black;
 }
 
 .searchInput{
-  width: 60%;
+  width: 93%;
+  height: 100%;
+  border: none;
   outline: none;
 }
 
+.searchButton{
+  width: 5%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+}
+
 .CardsContainer{
+  position: relative;
   margin-top: 0px;
   margin: 20px;
 }
