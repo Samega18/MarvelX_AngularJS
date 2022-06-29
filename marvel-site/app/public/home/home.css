@@ -53,25 +53,3 @@ body {
   margin-top: 0px;
   margin: 20px;
 }
-
-
-/* -------------------------------------------- */
-
-.character-image {
-  border-radius: 10px;
-  box-shadow: 0px 0px 11px 3px black;
-}
-
-.search-container {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.titulo {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.limit-item {
-  padding: 5px;
-}
