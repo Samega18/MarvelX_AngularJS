@@ -98,7 +98,7 @@ gulp.task("server", ["watch"], () => {
       host: "localhost",
       livereload: true,
       port: 4200,
-      open: false,
+      open: true,
     })
   );
 });

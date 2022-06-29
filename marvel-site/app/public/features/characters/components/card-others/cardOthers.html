@@ -1,0 +1,27 @@
+<div class="cardOthersContainerBoot">
+    <div class="cardOthersContainer" ng-click="ctrl.seeDetails()">
+        <div class="cardOthersImg">
+            <img ng-src="{{ctrl.character.thumbnail.path + '/portrait_uncanny.jpg'}}">
+        </div>
+        <div class="cardOthersBody" ng-if="ctrl.categorieLocal=='series'">
+            <p>{{ctrl.character.title}}</p>
+            <p1>{{ctrl.character.startYear}}</p1>
+        </div>
+        <div class="cardOthersBody" ng-if="ctrl.categorieLocal=='comics'">
+            <p>{{ctrl.character.title}}</p>
+            <p1>{{ctrl.character.variantDescription}}</p1>
+        </div>
+        <div class="cardOthersBody" ng-if="ctrl.categorieLocal=='events'">
+            <p>{{ctrl.character.title}}</p>
+            <p1>{{ctrl.character.start}}</p1>
+        </div>
+        <div class="cardOthersBody" ng-if="ctrl.categorieLocal=='stories'">
+            <p>{{ctrl.character.title}}</p>
+            <p1>{{ctrl.character.start}}</p1>
+        </div>
+        <div class="cardOthersBody" ng-if="ctrl.categorieLocal=='creators'">
+            <p>{{ctrl.character.fullName}}</p>
+            <p1>{{ctrl.character.suffix}}</p1>
+        </div>
+    </div>
+</div>

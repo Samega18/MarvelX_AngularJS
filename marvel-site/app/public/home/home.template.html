@@ -1,41 +1,88 @@
-<section ng-controller="HomeController as ctrl">
+<section ng-controller="HomeController as ctrl" ng-init="ctrl.search()">
 
-  <div class="container-fluid characters-container">
+  <div class="characters-container">
 
-    <div class="categorie-container">
-        <span class="categorie-span1">
-          <img draggable="false" src="../../../assets/img/Home/TRetangulo.png"/>
+    <categories change-search="ctrl.search()"></categories>
+    <info-search title="titleCategorie" description="descriptionCategorie"></info-search>
+
+    <form name="search" class="searchContainer">
+        <div class="inputGroup">
+          
+          <input class="searchInput"
+            ng-model="ctrl.searchName"
+            type="text"
+            placeholder="Search character...">
+          <button class="btn btn-primary"
+            ng-click="ctrl.search()"
+            type="button">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          
+
+        </div>
+    </form>
+
+    <div class="row CardsContainer">
+
+      
+        <span ng-if="categorie=='characters'">
+          <div class="col-sx-12 col-sm-4 col-md-2"
+          ng-repeat="character in ctrl.characters">
+            <card-character character="character" see-details="ctrl.seeDetails(character)"
+            ></card-character>
+          </div>
+          <div class="col-md-12"
+            ng-if="ctrl.characters.length <= ctrl.totalItems">
+            <button class="btn btn-primary"
+              ng-click="ctrl.seeMore()">
+              Ver mais
+            </button>
+          </div>
         </span>
-        <div>
-          <img src="../../../assets/img/Home/Charac.jpg"/>
-          <span class="categorie-span"><h1>Personagens</h1></span>
-        </div>
-        <div>
-          <img src="../../../assets/img/Home/Movies.jpg"/>
-          <span class="categorie-span"><h1>Filmes</h1></span>
-        </div>
-        <div>
-          <img src="../../../assets/img/Home/Series.jpg"/>
-          <span class="categorie-span"><h1>Séries</h1></span>
-        </div>
-        <div>
-          <img src="../../../assets/img/Home/Comic.jpg"/>
-          <span class="categorie-span"><h1>Quadrinhos</h1></span>
-        </div>
-        <span class="categorie-span2">
-          <img draggable="false" src="../../../assets/img/Home/TRetangulo.png"/>
+        
+        <span ng-if="categorie=='events' || categorie=='series' || categorie=='comics'">
+          <div class="col-sx-12 col-sm-5 col-md-3"
+          ng-repeat="character in ctrl.characters">
+            <card-others character="character" categorie-local="categorie"
+            see-details="ctrl.seeDetails(character)"></card-others>
+          </div>
         </span>
+
     </div>
-
-    
     
   </div>
 
 </section>
 
 <!-- <section ng-controller="HomeController as ctrl">
-  <div class="container-fluid characters-container">
 
+  <div class="categorie-container">
+      <span class="categorie-span1">
+        <img draggable="false" src="../../../assets/img/Home/TRetangulo.png"/>
+      </span>
+      <div ng-click="changeCategorie(1)">
+        <img src="../../../assets/img/Home/Charac.jpg"/>
+        <span class="categorie-span"><h1>Personagens</h1></span>
+      </div>
+      <div ng-click="changeCategorie(2)">
+        <img src="../../../assets/img/Home/Movies.jpg"/>
+        <span class="categorie-span"><h1>Filmes</h1></span>
+      </div>
+      <div ng-click="changeCategorie(3)">
+        <img src="../../../assets/img/Home/Series.jpg"/>
+        <span class="categorie-span"><h1>Séries</h1></span>
+      </div>
+      <div ng-click="changeCategorie(4)">
+        <img src="../../../assets/img/Home/Comic.jpg"/>
+        <span class="categorie-span"><h1>Quadrinhos</h1></span>
+      </div>
+      <span class="categorie-span2">
+        <img draggable="false" src="../../../assets/img/Home/TRetangulo.png"/>
+      </span>
+    </div>
+
+  <div class="container-fluid characters-container">
+    https://github.com/darllinsonazvd
     <div class="row search-container">
       <form name="search">
         <div class="col-md-4">

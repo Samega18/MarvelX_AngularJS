@@ -3,10 +3,11 @@ angular
   .controller("HomeController", [
     "CharactersService",
     "$state",
+    "$rootScope",
     HomeController,
   ]);
 
-function HomeController(charactersService, $state) {
+function HomeController(charactersService, $state, $rootScope) {
   const vm = this;
   vm.characters = [];
   vm.searchName = "";
@@ -16,17 +17,18 @@ function HomeController(charactersService, $state) {
   vm.limit = vm.limits[2];
   vm.totalItems = 0;
   vm.search = () => {
+    vm.characters = [];
     vm.offset = 0;
     vm.getCharacters(true);
     window.scrollTo({
-      top: 0,
+      top: 550,
       behavior: "smooth",
     });
   };
 
   vm.getCharacters = (reset) => {
     charactersService
-      .getAllCharacters(vm.searchName, vm.offset, vm.limit)
+      .getAllCharacters(vm.searchName, vm.offset, vm.limit, $rootScope.categorie)
       .then((response) => {
         vm.totalItems = response.data.data.total;
         if (reset) {
@@ -42,7 +44,7 @@ function HomeController(charactersService, $state) {
 
   vm.seeDetails = (character) => {
     console.log("Informação", character);
-    $state.go("details", { characterId: character.id });
+    $state.go("details", { categorie: $rootScope.categorie,characterId: character.id });
   };
 
   vm.switchLimit = (limit) => {

@@ -8,9 +8,9 @@ angular.module("app").config([
         templateUrl: "public/home/home.template.html",
       })
       .state("details", {
-        url: "/details/:characterId",
+        url: "/details/:categorie/:characterId",
         templateUrl:
-          "public/character-details-container/characterDetailsContainer.html",
+          "public/details/details.html",
         params: {
           characterId: null,
         },
