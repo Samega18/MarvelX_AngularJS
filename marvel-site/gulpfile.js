@@ -13,6 +13,13 @@ gulp.task("dev", () => {
   sequence("deps", "env-dev", "app", "server");
 });
 
+gulp.task('build', function(done){
+  return gulp.src('src/*.js')
+  .pipe(concat('main.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('dest'))
+});
+
 gulp.task("env-dev", () => {
   return exec("git describe --tags --abbrev=0", (error, stdout) => {
     gulp
@@ -90,6 +97,13 @@ gulp.task("watch", () => {
   watch("assets/css/**/*.css", () => gulp.start("app.css"));
   watch("app/**/*.js", () => gulp.start("app.js"));
   watch("app/**/*.*", () => gulp.start("app.assets"));
+});
+
+gulp.task('server', function(done){
+  bSync.init({
+    server:'./dest',
+  });
+  done();
 });
 
 gulp.task("server", ["watch"], () => {
