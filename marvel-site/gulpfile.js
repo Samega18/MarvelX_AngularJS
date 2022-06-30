@@ -20,6 +20,10 @@ gulp.task('build', function(done){
   .pipe(gulp.dest('dest'))
 });
 
+gulp.task("prod", () => {
+  sequence("deps", "env-dev", "app");
+});
+
 gulp.task("env-dev", () => {
   return exec("git describe --tags --abbrev=0", (error, stdout) => {
     gulp
@@ -97,13 +101,6 @@ gulp.task("watch", () => {
   watch("assets/css/**/*.css", () => gulp.start("app.css"));
   watch("app/**/*.js", () => gulp.start("app.js"));
   watch("app/**/*.*", () => gulp.start("app.assets"));
-});
-
-gulp.task('server', function(done){
-  bSync.init({
-    server:'./dest',
-  });
-  done();
 });
 
 gulp.task("server", ["watch"], () => {
