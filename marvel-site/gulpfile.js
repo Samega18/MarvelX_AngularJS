@@ -13,16 +13,12 @@ gulp.task("dev", () => {
   sequence("deps", "env-dev", "app", "server");
 });
 
-gulp.task('build', function(done){
+/* gulp.task('build', function(done){
   return gulp.src('src/*.js')
   .pipe(concat('main.js'))
   .pipe(uglify())
   .pipe(gulp.dest('dest'))
-});
-
-gulp.task("prod", () => {
-  sequence("deps", "env-dev", "app");
-});
+}); */
 
 gulp.task("env-dev", () => {
   return exec("git describe --tags --abbrev=0", (error, stdout) => {
@@ -112,4 +108,8 @@ gulp.task("server", ["watch"], () => {
       open: true,
     })
   );
+});
+
+gulp.task("prod", () => {
+  sequence("deps", "env-dev", "app");
 });
