@@ -22,6 +22,10 @@
     display: none;
 }
 
+.header-menu-toggle-details{
+    display: none;
+}
+
 .header-menu-section nav{
     display: none;
 }

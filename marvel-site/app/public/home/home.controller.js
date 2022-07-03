@@ -19,14 +19,20 @@ function HomeController(charactersService, $state, $rootScope) {
   vm.limit = vm.limits[2];
   vm.totalItems = 0;
   
-  vm.search = () => {
+  vm.search = (mount) => {
     vm.characters = [];
     vm.offset = 0;
     vm.getCharacters(true);
-    window.scrollTo({
-      top: 550,
-      behavior: "smooth",
-    });
+
+    if(mount){
+      
+    } else {
+      window.scrollTo({
+        top: 550,
+        behavior: "smooth",
+      });
+    }
+
   };
 
   vm.getCharacters = (reset) => {
@@ -49,6 +55,7 @@ function HomeController(charactersService, $state, $rootScope) {
           }
         }
         
+        vm.searchName = "";
         vm.isLoading = false
       })
       .catch((error) => {

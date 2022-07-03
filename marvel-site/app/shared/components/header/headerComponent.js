@@ -1,20 +1,19 @@
 angular.module("app").component("appHeader", {
     templateUrl: "shared/components/header/header.html",
-    controller: [ '$rootScope' , function ($rootScope) {
+    controller: [ '$rootScope', '$state' , function ($rootScope, $state) {
         const vm = this;
         vm.headerClass = "header-menu-section";
+        vm.headerShow = "header-menu-toggle";
+        
+        setInterval(() => {
+            const pathDetails = window.location.hash;
 
-        vm.changeHeaderClass = () =>{
-
-            if(vm.headerClass == "header-menu-section"){
-                document.body.style.overflowY = 'hidden';
-                vm.headerClass = "header-menu-section on";
+            if(pathDetails.startsWith("#!/details")){
+                vm.headerShow = "header-menu-toggle-details";
             } else {
-                document.body.style.overflowY = 'scroll';
-                vm.headerClass = "header-menu-section";
+                vm.headerShow = "header-menu-toggle";
             }
-
-        }
+        }, 200);
 
         vm.search = () =>{
             $rootScope.searchForRoot();

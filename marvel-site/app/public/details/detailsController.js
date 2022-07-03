@@ -31,7 +31,7 @@ function DetailsController(charactersService, $stateParams, $rootScope) {
 
   });
 
-  vm.changeViewCategorie = (value) =>{
+  vm.changeViewCategorie = (value, reset) =>{
     vm.isLoadingCategorie = true;
     vm.categorieView = value;
 
@@ -50,9 +50,14 @@ function DetailsController(charactersService, $stateParams, $rootScope) {
     }
 
     charactersService.getDetailView(vm.categorieLocal, vm.characterId, vm.categorieView, vm.limit, vm.offset).then(data =>{
-      vm.categorieData = data.data.data.results;
+
+      if (reset) {
+        vm.categorieData = data.data.data.results;
+      } else {
+        vm.categorieData = [...vm.categorieData, ...data.data.data.results];
+      }
+
       vm.isLoadingCategorie = false;
-      console.log(vm);
     });
 
   };

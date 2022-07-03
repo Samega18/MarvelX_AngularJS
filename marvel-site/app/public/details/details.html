@@ -20,27 +20,27 @@
                 </div>
             </div>
 
-            <span ng-if="ctrl.categorieLocal=='characters'" ng-init="ctrl.changeViewCategorie('events')">
+            <span ng-if="ctrl.categorieLocal=='characters'" ng-init="ctrl.changeViewCategorie('events', true)">
                 
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'events' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('events')">
+                    ng-click="ctrl.changeViewCategorie('events', true)">
                         <span>Eventos</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'series' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('series')">
+                    ng-click="ctrl.changeViewCategorie('series', true)">
                         <span>Séries</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'comics' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('comics')">
+                    ng-click="ctrl.changeViewCategorie('comics', true)">
                         <span>Quadrinhos</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('stories')">
+                    ng-click="ctrl.changeViewCategorie('stories', true)">
                         <span>Histórias</span>
                     </li>
                 </ul>
@@ -99,27 +99,27 @@
 
             </span>
 
-            <span ng-if="ctrl.categorieLocal=='events'" ng-init="ctrl.changeViewCategorie('characters')">
+            <span ng-if="ctrl.categorieLocal=='events'" ng-init="ctrl.changeViewCategorie('characters', true)">
                 
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'characters' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('characters')">
+                    ng-click="ctrl.changeViewCategorie('characters', true)">
                         <span>Personagens</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'series' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('series')">
+                    ng-click="ctrl.changeViewCategorie('series', true)">
                         <span>Séries</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'comics' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('comics')">
+                    ng-click="ctrl.changeViewCategorie('comics', true)">
                         <span>Quadrinhos</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('stories')">
+                    ng-click="ctrl.changeViewCategorie('stories', true)">
                         <span>Histórias</span>
                     </li>
                 </ul>
@@ -178,27 +178,27 @@
 
             </span>
 
-            <span ng-if="ctrl.categorieLocal=='series'" ng-init="ctrl.changeViewCategorie('characters')">
+            <span ng-if="ctrl.categorieLocal=='series'" ng-init="ctrl.changeViewCategorie('characters', true)">
                 
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'characters' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('characters')">
+                    ng-click="ctrl.changeViewCategorie('characters', true)">
                         <span>Personagens</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'events' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('events')">
+                    ng-click="ctrl.changeViewCategorie('events', true)">
                         <span>Eventos</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'comics' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('comics')">
+                    ng-click="ctrl.changeViewCategorie('comics', true)">
                         <span>Quadrinhos</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('stories')">
+                    ng-click="ctrl.changeViewCategorie('stories', true)">
                         <span>Histórias</span>
                     </li>
                 </ul>
@@ -257,27 +257,27 @@
 
             </span>
 
-            <span ng-if="ctrl.categorieLocal=='comics'" ng-init="ctrl.changeViewCategorie('characters')">
+            <span ng-if="ctrl.categorieLocal=='comics'" ng-init="ctrl.changeViewCategorie('characters', true)">
                 
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'characters' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('characters')">
+                    ng-click="ctrl.changeViewCategorie('characters', true)">
                         <span>Personagens</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'events' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('events')">
+                    ng-click="ctrl.changeViewCategorie('events', true)">
                         <span>Eventos</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'creators' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('creators')">
+                    ng-click="ctrl.changeViewCategorie('creators', true)">
                         <span>Criadores</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
-                    ng-click="ctrl.changeViewCategorie('stories')">
+                    ng-click="ctrl.changeViewCategorie('stories', true)">
                         <span>Histórias</span>
                     </li>
                 </ul>
