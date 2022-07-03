@@ -37,7 +37,6 @@ function HomeController(charactersService, $state, $rootScope) {
       .getAllCharacters(vm.searchName, vm.offset, vm.limit, $rootScope.categorie)
       .then((response) => {
         vm.totalItems = response.data.data.total;
-        console.log(response);
 
         if(response.data.data.results.length == 0){
           vm.characters = [];
@@ -70,4 +69,8 @@ function HomeController(charactersService, $state, $rootScope) {
     vm.offset += vm.limit;
     vm.getCharacters();
   };
+
+  $rootScope.searchForRoot = () => {
+    vm.search();
+  }
 }

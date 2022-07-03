@@ -34,7 +34,7 @@ body {
 }
 
 .searchInput{
-  width: 93%;
+  width: 90%;
   height: 100%;
   border: none;
   outline: none;
@@ -52,4 +52,56 @@ body {
   position: relative;
   margin-top: 0px;
   margin: 20px;
+}
+
+@media (max-width: 1000px) {
+  
+  .inputGroup{
+    width: 60%;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .inputGroup{
+    width: 70%;
+  }
+
+  .categorieContainerHome{
+    display: none;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .inputGroup{
+    width: 80%;
+  }
+
+  .searchInput{
+    width: 87%;
+  }
+  
+  .searchButton{
+    width: 7%;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .inputGroup{
+    width: 90%;
+  }
+
+  .searchInput{
+    width: 86%;
+  }
+  
+  .searchButton{
+    width: 8%;
+  }
+
 }

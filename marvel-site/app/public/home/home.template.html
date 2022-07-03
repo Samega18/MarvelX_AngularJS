@@ -2,17 +2,17 @@
 
   <div class="characters-container">
 
-    <categories change-search="ctrl.search()"></categories>
+    <categories class="categorieContainerHome" change-search="ctrl.search()"></categories>
     <info-search title="titleCategorie" description="descriptionCategorie"></info-search>
 
-    <!-- Comentário -->
     <form name="search" class="searchContainer">
         <div class="inputGroup">
           
           <input class="searchInput"
             ng-model="ctrl.searchName"
             type="text"
-            placeholder="Pesquisar..">
+            placeholder="Pesquisar.." 
+            ng-keyup="$event.keyCode == 13 && ctrl.search()">
           <button class="searchButton"
             ng-click="ctrl.search()"
             type="button">
@@ -54,17 +54,18 @@
           </div>
         </span>
 
-        <span ng-if="ctrl.isLoading==false && ctrl.errorView==false">
-          <div class="col-md-12"
-          ng-if="ctrl.characters.length <= ctrl.totalItems">
-            <button class="btn btn-primary"
-              ng-click="ctrl.seeMore()">
-              Ver mais
-            </button>
-          </div>
-        </span>
-
     </div>
+
+    <span ng-if="ctrl.isLoading==false && ctrl.errorView==false">
+      <div class="col-md-12"
+      style="display: flex;align-items: center;justify-content: center;width: 100%;height: 80px;"
+      ng-if="ctrl.characters.length <= ctrl.totalItems">
+        <button class="btn btn-primary"
+          ng-click="ctrl.seeMore()">
+          Ver mais
+        </button>
+      </div>
+    </span>
     
   </div>
 

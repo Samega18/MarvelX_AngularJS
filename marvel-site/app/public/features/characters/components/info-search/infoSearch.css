@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
     width: 100%;
     height: 170px;
 
@@ -26,4 +27,77 @@
 
     margin: 5px;
     color: white;
+}
+
+@media (max-width: 900px) {
+    
+    .infoSearchContainer h1{
+        font-size: 55px;
+    }
+
+    .infoSearchContainer h3{
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .infoSearchContainer{
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .infoSearchContainer::after{
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: black;
+        opacity: 0.6;
+    }
+
+    .infoSearchContainer::before{
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image: url("https://images8.alphacoders.com/914/914348.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .infoSearchContainer h1{
+        font-size: 52px;
+        z-index: 3;
+    }
+
+    .infoSearchContainer h3{
+        font-size: 23px;
+        margin-right: 20px;
+        margin-left: 20px;
+        z-index: 3;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .infoSearchContainer h1{
+        font-size: 48px;
+    }
+
+    .infoSearchContainer h3{
+        font-size: 21px;
+    }
+
 }

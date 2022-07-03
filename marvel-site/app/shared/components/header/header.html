@@ -1,5 +1,20 @@
 <header class="headerContainer">
     
-    <img src="../../../../../../assets/img/marvel.png" class="headerImgLogo"/>
+    <img src="../../../../../../assets/img/marvel2.png" class="headerImgLogo"/>
+
+    <div ng-class="ctrl.headerClass">
+        <div class='header-menu-toggle' ng-click="ctrl.changeHeaderClass()">
+            <div class='one'></div>
+            <div class='two'></div>
+            <div class='three'></div>
+        </div>
+        <nav>
+    
+            <categories change-search="ctrl.search()" side-bar="ctrl.changeHeaderClass()">
+
+            </categories>
+           
+        </nav>
+    </div>
 
 </header>
