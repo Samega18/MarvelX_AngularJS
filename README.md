@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=bd170b&labelColor=400703"/>
+  <img alt="License" src="https://img.shields.io/static/v1?label=License&message=MIT&color=bd170b&labelColor=400703"/>
 
   <img alt="MarvelX beta0.0.1" src="https://img.shields.io/static/v1?label=MarvelX&message=1.0.0&color=bd170b&labelColor=400703"/>
 
@@ -27,3 +27,7 @@ Você pode visitar o site [clicando aqui](https://marvelx.netlify.app/#!/home)
 - Karma
 - Jasmine
 - Node 8.15.1
+
+## Licença MIT
+
+Veja o arquivo [clicando aqui](github/LICENSE.md)
