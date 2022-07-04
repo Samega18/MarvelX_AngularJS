@@ -8,8 +8,8 @@
 
 <div align="center">
 
+  <img src="/github/preview.gif" width="900"/>
   ![cover](github/preview.gif)
-  
 </div>
 
 # MarvelX
