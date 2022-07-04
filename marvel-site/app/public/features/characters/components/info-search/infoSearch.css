@@ -8,8 +8,6 @@
     height: 170px;
 
     background-color: black;
-
-    /* background-image: linear-gradient(0deg, rgb(226, 12, 12), black, black, black); */
 }
 
 .infoSearchContainer h1{
@@ -41,6 +39,7 @@
 
 }
 
+/* Responsável pelo layout responsivo para Mobile */
 @media (max-width: 767px) {
 
     .infoSearchContainer{

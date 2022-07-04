@@ -30,6 +30,8 @@
     display: none;
 }
 
+/* Responsável pelo layout responsivo para Mobile, também por ativar o Menu Hamburguer e
+executar todas as animações dele */
 @media (max-width: 767px) {
 
     .one,.two,.three{

@@ -22,10 +22,12 @@
     cursor: pointer;
 }
 
+/* Aumenta o scale da imagem ao passar o Mouse no Card */
 .cardCharacterContainer:hover .cardCharacterImg img{
     transform: scale(1.1);
 }
 
+/* Amplia a altura de um Content na cor vemelha para cobrir a parte inferior do card */
 .cardCharacterContainer:hover .cardCharacterImg::after{
     height: 50%;
 }
@@ -36,6 +38,7 @@
     overflow: hidden;
 }
 
+/* Content que será ampliado no Height ao Mouse passar no Card */
 .cardCharacterImg::after{
     content: "";
     left: 0;
@@ -67,6 +70,7 @@
     z-index: 30;
 }
 
+/* Responsável por fazer a ponta inferior direita estar faltando */
 .cardCharacterBody::after{
     border-bottom-color: transparent;
     border-left-color: transparent;

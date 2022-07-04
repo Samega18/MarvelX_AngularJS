@@ -1,17 +1,28 @@
+<!-- Observação: O Conteúdo do HTML ficou grande pelo fato da utilização de 4 categorias diferentes,
+para diminuir consumo do sistema, achei mais interessante deixar tudo no details mesmo no lugar a criação de 
+components para ele.
+
+Então existe elementos responsáveis por cada categoria na pagina de detalhes, com informações diferentes para cada,
+cabe ao sistema identificar a categoria em uso e mostrar as informações definidas.-->
 <section ng-controller="DetailsController as ctrl">
     
+    <!-- Classe Container do Details -->
     <div class="detailsContainer">
+        <!-- Loading da Página toda, quando o component estiver sendo montado -->
         <span ng-if="ctrl.isLoadingPage==true">
             <loading></loading>
         </span>
 
+        <!-- A Página aparece quando for finalizado tudo -->
         <span ng-if="ctrl.isLoadingPage==false">
+
+            <!-- Responsável pelo topo da página, mostra as informações essenciais do resultado -->
             <div class="detailsTopContainer">
                 <figure class="detailsTopLeft">
                     <img ng-src="{{ctrl.data.thumbnail.path + '/portrait_uncanny.jpg'}}">
                 </figure>
                 <div class="detailsTopRight" ng-if="ctrl.categorieLocal == 'characters'">
-                    <h1>{{ctrl.data.name}}</h1>
+                    <h1>{{ctrl.data.name | upper}}</h1>
                     <p>{{ctrl.data.description}}</p>
                 </div>
                 <div class="detailsTopRight" ng-if="ctrl.categorieLocal == 'events' || ctrl.categorieLocal=='series' || ctrl.categorieLocal=='comics'">
@@ -20,35 +31,39 @@
                 </div>
             </div>
 
+            <!-- Responsável pelas informações da categoria "Characters" -->
             <span ng-if="ctrl.categorieLocal=='characters'" ng-init="ctrl.changeViewCategorie('events', true)">
                 
+                <!-- Classe Container para outras informações do resultado da categoria -->
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'events' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('events', true)">
-                        <span>Eventos</span>
+                        <span>Events</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'series' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('series', true)">
-                        <span>Séries</span>
+                        <span>Series</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'comics' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('comics', true)">
-                        <span>Quadrinhos</span>
+                        <span>Comics</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('stories', true)">
-                        <span>Histórias</span>
+                        <span>Stories</span>
                     </li>
                 </ul>
 
+                <!-- Loading para a espera na busca dos resultados das outras informações da categoria -->
                 <span ng-if="ctrl.isLoadingCategorie==true">
                     <loading></loading>
                 </span>
-        
+                
+                <!-- Classe container para os Cards, se caso cada Card não possuir resultado, informará: No results found -->
                 <div class="row CardsContainer" ng-if="ctrl.isLoadingCategorie==false">
         
                     <span ng-if="ctrl.categorieView == 'events'">
@@ -58,7 +73,7 @@
                         </div>
                         <span ng-if="ctrl.data.events.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
                     
@@ -69,7 +84,7 @@
                         </div>
                         <span ng-if="ctrl.data.series.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -80,7 +95,7 @@
                         </div>
                         <span ng-if="ctrl.data.comics.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -91,43 +106,47 @@
                         </div>
                         <span ng-if="ctrl.data.stories.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
             
-                </div>
+                </div><!-- End: CardsContainer -->
 
-            </span>
+            </span><!-- End: categoria "Characters" -->
 
+            <!-- Responsável pelas informações da categoria "Events" -->
             <span ng-if="ctrl.categorieLocal=='events'" ng-init="ctrl.changeViewCategorie('characters', true)">
                 
+                <!-- Classe Container para outras informações do resultado da categoria -->
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'characters' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('characters', true)">
-                        <span>Personagens</span>
+                        <span>Characters</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'series' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('series', true)">
-                        <span>Séries</span>
+                        <span>Series</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'comics' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('comics', true)">
-                        <span>Quadrinhos</span>
+                        <span>Comics</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('stories', true)">
-                        <span>Histórias</span>
+                        <span>Stories</span>
                     </li>
                 </ul>
 
+                <!-- Loading para a espera na busca dos resultados das outras informações da categoria -->
                 <span ng-if="ctrl.isLoadingCategorie==true">
                     <loading></loading>
                 </span>
-        
+                
+                <!-- Classe container para os Cards, se caso cada Card não possuir resultado, informará: No results found -->
                 <div class="row CardsContainer" ng-if="ctrl.isLoadingCategorie==false">
         
                     <span ng-if="ctrl.categorieView == 'characters'">
@@ -137,7 +156,7 @@
                         </div>
                         <span ng-if="ctrl.data.characters.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
                     
@@ -148,7 +167,7 @@
                         </div>
                         <span ng-if="ctrl.data.series.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -159,7 +178,7 @@
                         </div>
                         <span ng-if="ctrl.data.comics.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -170,43 +189,47 @@
                         </div>
                         <span ng-if="ctrl.data.stories.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
             
-                </div>
+                </div><!-- End: CardsContainer -->
 
-            </span>
-
+            </span><!-- End: categoria "Events" -->
+            
+            <!-- Responsável pelas informações da categoria "Series" -->
             <span ng-if="ctrl.categorieLocal=='series'" ng-init="ctrl.changeViewCategorie('characters', true)">
                 
+                <!-- Classe Container para outras informações do resultado da categoria -->
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'characters' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('characters', true)">
-                        <span>Personagens</span>
+                        <span>Characters</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'events' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('events', true)">
-                        <span>Eventos</span>
+                        <span>Events</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'comics' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('comics', true)">
-                        <span>Quadrinhos</span>
+                        <span>Comics</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('stories', true)">
-                        <span>Histórias</span>
+                        <span>Stories</span>
                     </li>
                 </ul>
 
+                <!-- Loading para a espera na busca dos resultados das outras informações da categoria -->
                 <span ng-if="ctrl.isLoadingCategorie==true">
                     <loading></loading>
                 </span>
-        
+                
+                <!-- Classe container para os Cards, se caso cada Card não possuir resultado, informará: No results found -->
                 <div class="row CardsContainer" ng-if="ctrl.isLoadingCategorie==false">
         
                     <span ng-if="ctrl.categorieView == 'characters'">
@@ -216,7 +239,7 @@
                         </div>
                         <span ng-if="ctrl.data.characters.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
                     
@@ -227,7 +250,7 @@
                         </div>
                         <span ng-if="ctrl.data.events.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -238,7 +261,7 @@
                         </div>
                         <span ng-if="ctrl.data.comics.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -249,43 +272,47 @@
                         </div>
                         <span ng-if="ctrl.data.stories.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
             
-                </div>
+                </div><!-- End: CardsContainer -->
 
-            </span>
+            </span><!-- End: categoria "Series" -->
 
+            <!-- Responsável pelas informações da categoria "Comics" -->
             <span ng-if="ctrl.categorieLocal=='comics'" ng-init="ctrl.changeViewCategorie('characters', true)">
                 
+                <!-- Classe Container para outras informações do resultado da categoria -->
                 <ul class="detailsMidContainer">
                     <li class="detailsMidCategorie" style="border-left: 1px solid white;border-right: 1px solid white;" 
                     ng-style="ctrl.categorieView == 'characters' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('characters', true)">
-                        <span>Personagens</span>
+                        <span>Characters</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'events' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('events', true)">
-                        <span>Eventos</span>
+                        <span>Events</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'creators' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('creators', true)">
-                        <span>Criadores</span>
+                        <span>Creators</span>
                     </li>
                     <li class="detailsMidCategorie" style="border-right: 1px solid white;"
                     ng-style="ctrl.categorieView == 'stories' && {'border-top': '5px solid red', 'color': 'white'}"
                     ng-click="ctrl.changeViewCategorie('stories', true)">
-                        <span>Histórias</span>
+                        <span>Stories</span>
                     </li>
                 </ul>
 
+                <!-- Loading para a espera na busca dos resultados das outras informações da categoria -->
                 <span ng-if="ctrl.isLoadingCategorie==true">
                     <loading></loading>
                 </span>
-        
+                
+                <!-- Classe container para os Cards, se caso cada Card não possuir resultado, informará: No results found -->
                 <div class="row CardsContainer" ng-if="ctrl.isLoadingCategorie==false">
         
                     <span ng-if="ctrl.categorieView == 'characters'">
@@ -295,7 +322,7 @@
                         </div>
                         <span ng-if="ctrl.data.characters.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
                     
@@ -306,7 +333,7 @@
                         </div>
                         <span ng-if="ctrl.data.events.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -317,7 +344,7 @@
                         </div>
                         <span ng-if="ctrl.data.creators.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
         
@@ -328,14 +355,15 @@
                         </div>
                         <span ng-if="ctrl.data.stories.available == 0"
                         style="display: flex;align-items: center;justify-content: center;width: 100%;height: 70px;">
-                            Não foi encontrado nenhum resultado
+                            No results found
                         </span>
                     </span>
             
-                </div>
+                </div><!-- End: CardsContainer -->
 
-            </span>
+            </span><!-- End: categoria "Comics" -->
 
+            <!-- Botão para "Ver Mais" dos resultados encontrados, se houver mais resultados -->
             <span ng-if="ctrl.isLoadingCategorie==false">
                 <div class="col-md-12" 
                 style="display: flex;align-items: center;justify-content: center;width: 100%;height: 80px;"
@@ -345,10 +373,10 @@
                     Ver mais
                   </button>
                 </div>
-              </span>
+            </span>
 
-        </span>
+        </span><!-- End: "A Página aparece quando for finalizado tudo" -->
 
-    </div>
+    </div><!-- End: detailsContainer -->
 
 </section>

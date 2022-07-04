@@ -23,10 +23,12 @@
     cursor: pointer;
 }
 
+/* Move a Imagem do card ao passar o mouse */
 .cardOthersContainer:hover .cardOthersImg img{
     transform: translateY(-15px);
 }
 
+/* Muda a cor da font do card ao passar o mouse */
 .cardOthersContainer:hover .cardOthersBody p{
     color: red;
 }

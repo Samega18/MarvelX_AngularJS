@@ -1,8 +1,15 @@
+<!-- Classe para alinhar o card no Centro -->
 <div class="cardOthersContainerBoot">
+    <!-- Classe container do Card -->
     <div class="cardOthersContainer" ng-click="ctrl.seeDetails()">
+        
+        <!-- Classe do card para a Imagem na parte superior-->
         <div class="cardOthersImg">
             <img ng-src="{{ctrl.character.thumbnail.path + '/portrait_uncanny.jpg'}}">
         </div>
+
+        <!-- Classes para as categorias presentes na parte inferior do card -->
+        <!-- Com condicionais para idenfiticar qual a categoria em uso -->
         <div class="cardOthersBody" ng-if="ctrl.categorieLocal=='series'">
             <p>{{ctrl.character.title}}</p>
             <p1>{{ctrl.character.startYear}}</p1>
@@ -23,5 +30,6 @@
             <p>{{ctrl.character.fullName}}</p>
             <p1>{{ctrl.character.suffix}}</p1>
         </div>
-    </div>
-</div>
+
+    </div><!-- End: cardOthersContainer -->
+</div><!-- End: cardOthersContainerBoot -->

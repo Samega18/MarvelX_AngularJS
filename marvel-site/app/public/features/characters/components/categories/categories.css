@@ -45,9 +45,6 @@
     max-width: 370px;
     width: 19%;
     height: 90%;
-    /* -webkit-transform: skew(-20deg);
-       -moz-transform: skew(-20deg);
-         -o-transform: skew(-20deg); */
     background: black;
   
     cursor: pointer;
@@ -75,9 +72,6 @@
   }
   
   .categorie-span h1{
-    /* -webkit-transform: skew(20deg);
-       -moz-transform: skew(20deg);
-         -o-transform: skew(20deg); */
     color: white;
     font-size: 32px;
     font-weight: bold;
@@ -89,6 +83,7 @@
     background-color: rgb(0, 0, 0, 1.0);
   }
 
+  /* Responsável pelo layout responsivo para Mobile */
   @media (max-width: 767px) {
     .categorie-container{
       display: flex;

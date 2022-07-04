@@ -1,5 +1,10 @@
 angular
   .module("app")
+  .filter('upper', function() {
+    return function(input) {
+      return input.toUpperCase();
+    };
+  })
   .controller("DetailsController", [
     "CharactersService",
     "$stateParams",

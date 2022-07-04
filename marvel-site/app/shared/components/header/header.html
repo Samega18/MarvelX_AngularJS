@@ -1,15 +1,21 @@
+<!-- Classe Container do Header -->
 <header class="headerContainer">
     
+    <!-- Imagem da Marvel -->
     <img src="../../../../../../assets/img/marvel2.png" class="headerImgLogo"/>
 
+    <!-- Classe Container do Menu Hamburguer + Corpo do Side Bar -->
     <div ng-class="ctrl.headerClass">
+        <!-- Classe do Menu Hamburguer -->
         <div ng-class='ctrl.headerShow' ng-click="ctrl.changeHeaderClass()">
             <div class='one'></div>
             <div class='two'></div>
             <div class='three'></div>
         </div>
+        <!-- Classe do corpo do Side Bar -->
         <nav>
-    
+            
+            <!-- Conteúdo do corpo -->
             <categories change-search="ctrl.search()" side-bar="ctrl.changeHeaderClass()">
 
             </categories>

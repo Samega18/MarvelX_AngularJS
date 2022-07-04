@@ -1,4 +1,5 @@
 angular.module("app").service("CharactersService", function ($http, env) {
+  // Solicitação da pesquisa do Home
   this.getAllCharacters = (name, offset, limit, categorie) => {
     const params = {
       apikey: "f79245e035e64fb032fd90e1e446d36f",
@@ -23,6 +24,7 @@ angular.module("app").service("CharactersService", function ($http, env) {
     });
   };
 
+  // Solicitação dos dados de um "id" em determinada "categoria"
   this.getDetails = (categorie, id) => {
 
     const params = {
@@ -36,6 +38,7 @@ angular.module("app").service("CharactersService", function ($http, env) {
     });
   };
 
+  // Solicitação de outros dados de um "id" em determinada "categoria"
   this.getDetailView = (categorie, id, categorieView, limit, offset) => {
 
     const params = {
@@ -51,15 +54,3 @@ angular.module("app").service("CharactersService", function ($http, env) {
     });
   };
 });
-
-
-
-/* Dados anteriores
-
-const params = {
-  apikey: "00c502c2b771a984e4cb31fea3921b14",
-  hash: "6a16c993302911bceb2491e49926426b",
-  ts: 1,
-  offset,
-  limit,
-}; */

@@ -1,11 +1,17 @@
+<!-- Classe para alinhar o card no Centro -->
 <div class="cardCharacterContainerBoot">
+    <!-- Classe container do Card -->
     <div class="cardCharacterContainer" ng-click="ctrl.seeDetails()">
+        <!-- Classe do card para a Imagem na parte superior-->
         <div class="cardCharacterImg">
             <img ng-src="{{ctrl.character.thumbnail.path + '/standard_fantastic.jpg'}}">
         </div>
+
+        <!-- Classe do card responsável pela parte inferior -->
         <div class="cardCharacterBody">
             <p>{{ctrl.character.name}}</p>
             <p1>{{ctrl.character.description}}</p1>
         </div>
-    </div>
-</div>
+
+    </div><!-- End: cardCharacterContainer -->
+</div><!-- End: cardCharacterContainerBoot -->

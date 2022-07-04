@@ -1,32 +1,40 @@
+<!-- Classe Container do Component -->
 <div class="categorie-container" ng-init="ctrl.justUpdate()">
+
+  <!-- Classe para a imagem do triângulo retângulo -->
   <span class="categorie-span1">
     <img draggable="false" src="../../../assets/img/Home/TRetangulo.png"/>
   </span>
+
+  <!-- Classes responsáveis por mostrar qual categoria está selecionada e permitir
+        a escolha da mesma, com alteração de style para informar qual a categoria escolhida-->
   <div ng-click="ctrl.changeCategorieLocal(1)">
     <img src="../../../assets/img/Home/Charac.jpg"/>
     <span class="categorie-span" ng-style="ctrl.categorieValue == 'characters' && {'background-color': 'rgb(150, 15, 15, 1.0)'}">
-      <h1>Personagens</h1>
+      <h1>Characters</h1>
     </span>
   </div>
   <div ng-click="ctrl.changeCategorieLocal(2)">
     <img src="../../../assets/img/Home/Stories.jpg"/>
     <span class="categorie-span" ng-style="ctrl.categorieValue == 'events' && {'background-color': 'rgb(150, 15, 15, 1.0)'}">
-      <h1>Eventos</h1>
+      <h1>Events</h1>
     </span>
   </div>
   <div ng-click="ctrl.changeCategorieLocal(3)">
     <img src="../../../assets/img/Home/Series.jpg"/>
     <span class="categorie-span" ng-style="ctrl.categorieValue == 'series' && {'background-color': 'rgb(150, 15, 15, 1.0)'}">
-      <h1>Séries</h1>
+      <h1>Series</h1>
     </span>
   </div>
   <div ng-click="ctrl.changeCategorieLocal(4)">
     <img src="../../../assets/img/Home/Comic.jpg"/>
     <span class="categorie-span" ng-style="ctrl.categorieValue == 'comics' && {'background-color': 'rgb(150, 15, 15, 1.0)'}">
-      <h1>Quadrinhos</h1>
+      <h1>Comics</h1>
     </span>
   </div>
+
+  <!-- Classe para a imagem do triângulo retângulo invertido-->
   <span class="categorie-span2">
     <img draggable="false" src="../../../assets/img/Home/TRetangulo.png"/>
   </span>
-</div>
+</div><!-- End: categorie-container -->

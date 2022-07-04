@@ -19,6 +19,7 @@ function HomeController(charactersService, $state, $rootScope) {
   vm.limit = vm.limits[2];
   vm.totalItems = 0;
   
+  //Responsável por buscar os resultados com algumas predefinições
   vm.search = (mount) => {
     vm.characters = [];
     vm.offset = 0;
@@ -35,6 +36,7 @@ function HomeController(charactersService, $state, $rootScope) {
 
   };
 
+  //Responsável por pegar os resultados com o service
   vm.getCharacters = (reset) => {
     vm.errorView = false;
     vm.isLoading = true;
@@ -44,10 +46,13 @@ function HomeController(charactersService, $state, $rootScope) {
       .then((response) => {
         vm.totalItems = response.data.data.total;
 
+        //Se o resultado não possuir conteúdo, mostra o erro que não encontrou nada
         if(response.data.data.results.length == 0){
           vm.characters = [];
           vm.errorView = true;
-        } else {
+        }
+        //Se não, vai colocar os resultados na variável ou adicionar com os que já possui 
+        else {
           if (reset) {
             vm.characters = response.data.data.results;
           } else {
@@ -63,8 +68,8 @@ function HomeController(charactersService, $state, $rootScope) {
       });
   };
 
+  //Responsável por ir para a tela de detalhes com o Id e o tipo da categoria
   vm.seeDetails = (character) => {
-    console.log("Informação", character);
     $state.go("details", { categorie: $rootScope.categorie, characterId: character.id });
   };
 
@@ -72,6 +77,7 @@ function HomeController(charactersService, $state, $rootScope) {
     vm.limit = limit;
   };
 
+  //Responsável por mostrar mais resultados na tela
   vm.seeMore = () => {
     vm.offset += vm.limit;
     vm.getCharacters();
@@ -80,4 +86,5 @@ function HomeController(charactersService, $state, $rootScope) {
   $rootScope.searchForRoot = () => {
     vm.search();
   }
+
 }
