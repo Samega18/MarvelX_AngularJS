@@ -9,9 +9,21 @@
 <div align="center">
 
   <img src="/github/preview.gif" width="500"/>
-  <!-- ![cover](github/preview.gif) -->
+
 </div>
 
 # MarvelX
 
+Projeto desenvolvido com AngularJS consumindo a API da Marvel para a pesquisa de Personagens, Eventos, Series e Quadrinhos com o intuito de estudar mais sobre o framework. O projeto foi pensado de uma forma que trouxesse mais desafios para o desenvolvimento.
 
+Você pode visitar o site [clicando aqui](https://marvelx.netlify.app/#!/home)
+
+## Tecnologias Utilizadas
+
+- AngularJS 1.8.2
+- Marvel Developer API
+- Bootstrap 3.7
+- Gulp Server
+- Karma
+- Jasmine
+- Node 8.15.1
