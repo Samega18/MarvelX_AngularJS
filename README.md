@@ -6,6 +6,11 @@
   <img alt="AngularJS 1.8.2" src="https://img.shields.io/static/v1?label=AngularJS&message=v1.8.2&color=bd170b&labelColor=400703"/>
 </p>
 
-![cover](github/preview.gif)
+<div align="center">
 
-# Resumo
+  ![cover](github/preview.gif)
+  
+</div>
+
+# MarvelX
+
