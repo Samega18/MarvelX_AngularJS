@@ -1,13 +1,14 @@
-<!-- Classe para alinhar o card no Centro -->
+<!-- Classe para alinhar o card no Centro ctrl.character.thumbnail.path + '/portrait_uncanny.jpg'-->
 <div class="cardOthersContainerBoot">
     <!-- Classe container do Card -->
     <div class="cardOthersContainer" ng-click="ctrl.seeDetails()">
         
         <!-- Classe do card para a Imagem na parte superior-->
         <div class="cardOthersImg">
-            <img ng-src="{{ctrl.character.thumbnail.path + '/portrait_uncanny.jpg'}}">
+            <img ng-src="{{ctrl.character.thumbnail.path + '/portrait_uncanny.jpg'}}" 
+            onerror="this.src='https://preview.redd.it/7z6qt753qe031.jpg?auto=webp&s=4a50e99f18ee877a87933e89d224eca29a9c3a21'">
         </div>
-
+        
         <!-- Classes para as categorias presentes na parte inferior do card -->
         <!-- Com condicionais para idenfiticar qual a categoria em uso -->
         <div class="cardOthersBody" ng-if="ctrl.categorieLocal=='series'">
