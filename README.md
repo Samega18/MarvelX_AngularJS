@@ -8,7 +8,7 @@
 
 <div align="center">
 
-  <img src="/github/preview.gif" width="900"/>
+  <img src="/github/preview.gif" width="600"/>
   ![cover](github/preview.gif)
 </div>
 
