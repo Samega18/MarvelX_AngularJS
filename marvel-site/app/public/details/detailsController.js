@@ -37,6 +37,8 @@ function DetailsController(charactersService, $stateParams, $rootScope) {
   });
 
   vm.changeViewCategorie = (value, reset) =>{
+    console.log("1: "+value)
+    console.log("2: "+reset)
     vm.isLoadingCategorie = true;
     vm.categorieView = value;
 
