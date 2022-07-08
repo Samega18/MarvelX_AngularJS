@@ -1,6 +1,7 @@
 .detailsContainer{
     width: 100%;
-    min-height: 80vh;
+    min-height: calc(100vh - 140px);
+    margin-top: 80px;
 }
 
 .detailsTopContainer{

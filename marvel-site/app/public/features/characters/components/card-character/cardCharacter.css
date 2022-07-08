@@ -67,7 +67,7 @@
     vertical-align: middle;
     color: white;
     font-family: var(--font-marvel);
-    z-index: 30;
+    z-index: 2;
 }
 
 /* Responsável por fazer a ponta inferior direita estar faltando */
@@ -83,7 +83,7 @@
     position: absolute;
     right: 0;
     top: auto;
-    z-index: 40;
+    z-index: 3;
 }
 
 .cardCharacterBody p{
