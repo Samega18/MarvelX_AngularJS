@@ -12,6 +12,7 @@ angular.module("app").config([
         templateUrl:
           "public/details/details.html",
         params: {
+          categorie: null,
           characterId: null,
         },
       });
